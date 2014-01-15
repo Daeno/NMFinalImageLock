@@ -27,7 +27,8 @@
     <string name="accountType">accountType</string>
     <string name="username">username</string>
     <string name="password">password</string>
-    
+    <string name="title_activity_mosaic">MosaicActivity</string>
+	<string name="title_activity_camera">CameraActivity</string>
     
     <string name="toast_notsetaccount">未連結此服務</string>
 </resources>

@@ -2,9 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.example.vvdpicturelock"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_column="1"
-    app:layout_row="1" >
+    android:layout_height="match_parent" >
 
 <com.example.vvdpicturelock.Tutorial3View
     android:id="@+id/tutorial3_activity_java_surface_view"

@@ -1,4 +1,4 @@
-package com.example.nmfinalimageunlock.util;
+package com.nmfinal.nmfinalimageunlock.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

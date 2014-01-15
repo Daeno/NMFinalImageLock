@@ -1,12 +1,5 @@
-package com.example.nmfinalimageunlock.camera;
+package com.nmfinal.nmfinalimageunlock;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,7 +35,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.vvdpicturelock.util.SystemUiHider;
+import com.nmfinal.nmfinalimageunlock.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

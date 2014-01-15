@@ -1,4 +1,4 @@
-package com.example.nmfinalimageunlock.util;
+package com.nmfinal.nmfinalimageunlock.util;
 
 import android.app.Activity;
 import android.view.View;

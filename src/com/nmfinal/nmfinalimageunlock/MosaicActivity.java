@@ -1,4 +1,4 @@
-package com.example.nmfinalimageunlock.camera;
+package com.nmfinal.nmfinalimageunlock;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,14 +10,11 @@ import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
-import com.nmfinal.nmfinalimageunlock.R;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -86,7 +83,7 @@ public class MosaicActivity extends Activity implements CvCameraViewListener2, O
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.mosaic, menu);
+		//getMenuInflater().inflate(R.menu.mosaic, menu);
 		return true;
 	}
 	

@@ -28,7 +28,6 @@
 
         <RelativeLayout
             android:id="@+id/fullscreen_content_controls"
-            style="?buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
@@ -42,7 +41,7 @@
         	android:layout_height="wrap_content"
         	android:layout_alignParentRight="true"
         	android:layout_centerVertical="true"
-        	android:text="@string/trackId"
+        	android:text="Track"
     		android:visibility="gone" />
     	<Button
         	android:id="@+id/mosaicButton"

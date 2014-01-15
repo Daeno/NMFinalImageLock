@@ -1,4 +1,4 @@
-package com.example.nmfinalimageunlock.camera;
+package com.nmfinal.nmfinalimageunlock;
 
 import java.io.FileOutputStream;
 import java.util.List;

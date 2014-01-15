@@ -1,9 +1,9 @@
 package com.nmfinal.nmfinalimageunlock;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,9 +14,7 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.nmfinal.nmfinalimageunlock.R.drawable;
 import com.nmfinal.preference.SharedPreferenceManager;
-import com.nmfinal.syncaccount.LinkAccountDialog;
 
 public class MainActivity extends Activity {
 
