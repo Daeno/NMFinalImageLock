@@ -43,6 +43,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class UnlockScreenActivity extends Activity {
 
@@ -54,6 +55,7 @@ public class UnlockScreenActivity extends Activity {
 	private static final int MEDIA_TYPE_IMAGE = 1;
 	private String path;
 	private ProgressBar pp;
+	private int retry = 0;
 	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
 
 	       @Override
@@ -134,9 +136,16 @@ public class UnlockScreenActivity extends Activity {
 			if(msg.what == -2){
 				Log.i("fuck", "fuck");
 				pp.setVisibility(View.INVISIBLE);
+				retry++;
+				if(retry > 3){
+					Toast.makeText(UnlockScreenActivity.this, "You've tried too many times! Back Off!!!", Toast.LENGTH_SHORT).show();
+					setResult(RESULT_CANCELED);
+					finish();
+				}
 			}
 			if(msg.what == -1){
 				Log.i("fuck","ya!!");
+				setResult(RESULT_OK);
 				finish();
 			}
         }
@@ -320,7 +329,7 @@ public class UnlockScreenActivity extends Activity {
 			Log.i("final","not pass");
 		}
 		Mat imageMatches = new Mat();
-		File mediaStorageDirectory = new File( getApplicationContext().getExternalFilesDir( Environment.DIRECTORY_PICTURES ), "VVDPictureLock" );
+		File mediaStorageDirectory = new File( getApplicationContext().getExternalFilesDir( Environment.DIRECTORY_PICTURES ), "PictureLock" );
 		String timeStamp = new SimpleDateFormat( "yyMMdd_HHmmss").format( new Date() );
 		
 		

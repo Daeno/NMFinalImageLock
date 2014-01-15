@@ -145,7 +145,7 @@ public class MosaicActivity extends Activity implements CvCameraViewListener2, O
 	        	findView();
 	        	String fileName = saveUri.getPath();
 	        	mOpenCvCameraView.takePicture(fileName);
-	        	Toast.makeText(this, "Picture Captured", Toast.LENGTH_SHORT);
+	        	Toast.makeText(this, "Picture Captured", Toast.LENGTH_SHORT).show();
 			    setResult(RESULT_OK);
 			    finish();
 			}

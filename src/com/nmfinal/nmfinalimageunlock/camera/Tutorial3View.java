@@ -69,9 +69,9 @@ public class Tutorial3View extends JavaCameraView implements PictureCallback {
     public void onPictureTaken(byte[] data, Camera camera) {
         Log.i(TAG, "Saving a bitmap to file");
         // The camera preview was automatically stopped. Start it again.
-        mCamera.startPreview();
-        mCamera.setPreviewCallback(this);
-        
+        //mCamera.startPreview();
+        //mCamera.setPreviewCallback(this);
+        Log.i(TAG, "Start        file io inifsndaf0");
         // Write the image in a file (in jpeg format)
         try {
             FileOutputStream fos = new FileOutputStream(mPictureFileName);

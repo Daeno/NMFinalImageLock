@@ -6,6 +6,7 @@ import org.opencv.android.LoaderCallbackInterface;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.ProgressBar;
 
 import com.nmfinal.nmfinalimageunlock.MainActivity;
 import com.nmfinal.nmfinalimageunlock.R;
+import com.nmfinal.nmfinalimageunlock.UnlockScreenActivity;
 
 public class LoginWebviewActivity extends Activity {
 	
@@ -70,8 +72,9 @@ public class LoginWebviewActivity extends Activity {
 	private void startTestingImage()
 	{
 		//this is for testing, delete this if using picture lock
-		startConnectingService();
-		
+		//startConnectingService();
+		Intent intent = new Intent(this,UnlockScreenActivity.class);
+		startActivityForResult(intent,100);
 		/*
 		fileUri = getOutputMediaUri( MEDIA_TYPE_IMAGE );
 		Intent pictureIntent = new Intent( MediaStore.ACTION_IMAGE_CAPTURE );
@@ -80,9 +83,14 @@ public class LoginWebviewActivity extends Activity {
 		*/
 		//TODO  if pass startConnectingService()
 		//         else toast then finish()
-		
 	}
-	
+	protected void onActivityResult( int requestCode, int resultCode, Intent data ){
+		if(requestCode == 100){
+			if(resultCode == RESULT_OK){
+				startConnectingService();
+			}
+		}
+	}
 	
 	
 	
