@@ -70,7 +70,7 @@ public class LoginWebviewActivity extends Activity {
 	private void startTestingImage()
 	{
 		//this is for testing, delete this if using picture lock
-		//startConnectingService();
+		startConnectingService();
 		
 		/*
 		fileUri = getOutputMediaUri( MEDIA_TYPE_IMAGE );

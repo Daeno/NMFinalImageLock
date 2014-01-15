@@ -1,4 +1,4 @@
-package com.nmfinal.nmfinalimageunlock;
+package com.nmfinal.nmfinalimageunlock.camera;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,6 +35,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.nmfinal.nmfinalimageunlock.R;
+import com.nmfinal.nmfinalimageunlock.R.id;
+import com.nmfinal.nmfinalimageunlock.R.layout;
 import com.nmfinal.nmfinalimageunlock.util.SystemUiHider;
 
 /**

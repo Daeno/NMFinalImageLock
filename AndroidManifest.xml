@@ -80,17 +80,26 @@
         </activity>
         
         <activity
-            android:name="com.nmfinal.nmfinalimageunlock.CameraActivity"
+            android:name="com.nmfinal.nmfinalimageunlock.camera.CameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_camera"
+            android:label="Advanced Camera"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         
         <activity
-            android:name="com.nmfinal.nmfinalimageunlock.MosaicActivity"
-            android:label="@string/title_activity_mosaic" 
-            android:screenOrientation="landscape" >
+            android:name="com.nmfinal.nmfinalimageunlock.camera.MosaicActivity"
+            android:label="Mosaic Camera" 
+            android:screenOrientation="landscape" 
+            android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         
         <service

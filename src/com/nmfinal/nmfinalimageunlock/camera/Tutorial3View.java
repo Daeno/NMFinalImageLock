@@ -1,4 +1,4 @@
-package com.nmfinal.nmfinalimageunlock;
+package com.nmfinal.nmfinalimageunlock.camera;
 
 import java.io.FileOutputStream;
 import java.util.List;
@@ -11,8 +11,6 @@ import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.Size;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
 
 public class Tutorial3View extends JavaCameraView implements PictureCallback {
 
