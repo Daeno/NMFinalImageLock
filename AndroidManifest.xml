@@ -78,6 +78,19 @@
                 <category android:name="android.intent.category.DEFAULT" /> 
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.nmfinal.nmfinalimageunlock.CameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_camera"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.nmfinal.nmfinalimageunlock.MosaicActivity"
+            android:label="@string/title_activity_mosaic" 
+            android:screenOrientation="landscape" >
+        </activity>
+        
         <service
             android:name="com.nmfinal.nmfinalimageunlock.UnlockScreenService" >
         </service>

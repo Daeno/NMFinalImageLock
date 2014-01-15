@@ -1,19 +1,14 @@
 package com.nmfinal.syncaccount;
 
-import java.net.URL;
-
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.text.StaticLayout;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebView;
@@ -75,7 +70,7 @@ public class LoginWebviewActivity extends Activity {
 	private void startTestingImage()
 	{
 		//this is for testing, delete this if using picture lock
-		startConnectingService();
+		//startConnectingService();
 		
 		/*
 		fileUri = getOutputMediaUri( MEDIA_TYPE_IMAGE );
@@ -83,6 +78,9 @@ public class LoginWebviewActivity extends Activity {
 		pictureIntent.putExtra( MediaStore.EXTRA_OUTPUT, fileUri );
 		startActivityForResult( pictureIntent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE );
 		*/
+		//TODO  if pass startConnectingService()
+		//         else toast then finish()
+		
 	}
 	
 	

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.vvdpicturelock"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_column="1"
+    app:layout_row="1" >
+
+<com.example.vvdpicturelock.Tutorial3View
+    android:id="@+id/tutorial3_activity_java_surface_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true" />
+
+<ImageView
+    android:id="@+id/mosaicImage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:adjustViewBounds="true"
+    android:alpha="0.5"/>
+
+</RelativeLayout>
