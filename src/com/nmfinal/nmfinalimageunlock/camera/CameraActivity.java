@@ -120,10 +120,11 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 	//private String gesturePassword;
 	private static ArrayList<Point> gesturePointList;
 	private static List<Double> gestureSlopeList;
+	ArrayList<Mat> frameList;
 	double psnrV;
 	Scalar mssimV;
    	String password = "/storage/emulated/0/Android/data/com.nmfinal.nmfinalimageunlock/files/Pictures/PictureLock/IMG_140112_084725.jpg";
-	String gesturePassword = "/storage/emulated/0/Android/data/com.nmfinal.nmfinalimageunlock/files/Pictures/PictureLock/Gesture_140115_154919.dat";
+	String gesturePassword = "/storage/emulated/0/Android/data/com.nmfinal.nmfinalimageunlock/files/Pictures/PictureLock/Gesture.dat";
   	
 	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
 
@@ -513,12 +514,22 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 	
 	private void saveGesture()
 	{
-		File mediaStorageDirectory = new File( getApplicationContext().getExternalFilesDir( Environment.DIRECTORY_PICTURES ), "VVDPictureLock" );
+		Log.i(TAG, "saveGesture");
+		File mediaStorageDirectory = new File( getApplicationContext().getExternalFilesDir( Environment.DIRECTORY_PICTURES ), "PictureLock" );
 		String timeStamp = new SimpleDateFormat( "yyMMdd_HHmmss").format( new Date() );		
+		
+		for ( int i = 0; i < frameList.size(); i++ )
+		{
+			fastTemplateMatching( frameList.get( i ), 2 );
+		}
+		
+		convertGesture();
+		
 		
 		try
 		{
-			String fileName = mediaStorageDirectory.getPath() + File.separator + "Gesture_" + timeStamp + ".dat";
+			String fileName = mediaStorageDirectory.getPath() + File.separator + "Gesture.dat";
+			Log.i("gesture output",fileName);
 			FileOutputStream fos = new FileOutputStream( fileName );
 			BufferedOutputStream bos = new BufferedOutputStream( fos );
 			DataOutputStream dos = new DataOutputStream( bos );
@@ -569,6 +580,13 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 	
 	private void recognizeGesture()
 	{
+		for ( int i = 0; i < frameList.size(); i++ )
+		{
+			fastTemplateMatching( frameList.get( i ), 2 );
+		}
+		
+		convertGesture();
+		
 		List<Double> passwordSequence = loadGesture();
 		double speedRatioStoP = ( double ) ( gestureSlopeList.size() - 1 ) / ( double ) ( passwordSequence.size() - 1 ); 
 		double accessPercentage = 0.5;
@@ -632,9 +650,9 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 		View v = findViewById(R.id.tutorial3_activity_java_surface_view );
 		
 		if ( succeedRatio >= accessPercentage )
-			Toast.makeText( v.getContext(), "pass!!", Toast.LENGTH_LONG).show();
+			Toast.makeText( CameraActivity.this, "pass!!", Toast.LENGTH_LONG).show();
 		else
-			Toast.makeText( v.getContext(), "you shall not pass!!", Toast.LENGTH_LONG).show();
+			Toast.makeText( CameraActivity.this, "you shall not pass!!", Toast.LENGTH_LONG).show();
 	}
 	
 	private void convertGesture()
@@ -663,9 +681,15 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 				leftSlope = gestureSlopeList.get( i - 1 );
 				
 				if ( p2.x - p1.x != 0 )
+				{
 					rightSlope = ( p2.y - p1.y ) / ( p2.x - p1.x );
+					Log.i("test", "normal slope");
+				}
 				else
+				{
 					rightSlope = Double.MAX_VALUE;
+					Log.i("test", "sharp slope");
+				}
 				
 				gestureSlopeList.add( ( leftSlope + rightSlope ) / 2 );
 			}
@@ -724,6 +748,7 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 					Point p1 = new Point( roiX1, roiY1 );
 					Point p2 = new Point( roiX2, roiY2 );
 					roi = new Rect( p1, p2 );
+					frameList = new ArrayList<Mat>();
 				}
 			}
 			else
@@ -731,7 +756,6 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 				//template = null;
 				isCropping = false;
 				isTracking = false;
-				convertGesture();
 			}			
 		}
 	}; 
@@ -847,9 +871,10 @@ public class CameraActivity extends Activity implements CvCameraViewListener2, O
 	   			 
 	   			// long StartTime = System.currentTimeMillis();
 	   			 Imgproc.cvtColor( frame, grayRef, Imgproc.COLOR_BGR2GRAY );		 
-	   			 //fastTemplateMatching( grayRef, 2 );
+	   			// fastTemplateMatching( grayRef, 2 );
 	   			 //opticalFlowLKTracking( grayRef );
-	   			 opticalFlowFBTracking( grayRef );
+	   			// opticalFlowFBTracking( grayRef );
+	   			 frameList.add( grayRef );
 	   			 System.gc();
 			   	// long EndTime = System.currentTimeMillis();
 			   	// long ExecutionTime = EndTime - StartTime;
