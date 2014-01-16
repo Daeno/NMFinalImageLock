@@ -110,6 +110,12 @@ public class SyncAccountsActivity extends Activity {
 		dropboxAcct.put( HASHKEY_ACCT_PASSWORD, null);
 		accountsData.add( dropboxAcct );
 		
+		HashMap<String,Object> googleAcct = new HashMap<String, Object>();
+		googleAcct.put( HASHKEY_ACCT_TYPE, getResources().getString(R.string.acctType_google) );
+		googleAcct.put( HASHKEY_ACCT_IMG, R.drawable.logo_google );
+		googleAcct.put( HASHKEY_ACCT_USERNAME, null);
+		googleAcct.put( HASHKEY_ACCT_PASSWORD, null);
+		accountsData.add( googleAcct );
 	}
 	
 	class AccountsListAdapter extends BaseAdapter
@@ -154,8 +160,9 @@ public class SyncAccountsActivity extends Activity {
 	            convertView = layoutInflater.inflate( R.layout.list_syncaccounts, null ); 
 	            account = new AccountItem();
 				account.accountImgView  = (ImageView) convertView.findViewById( R.id.img_account_icon );
-				account.accountImgView.setMaxHeight(100);
 				account.accountImgView.setAdjustViewBounds( true );
+				account.accountImgView.setMaxHeight(100);
+				account.accountImgView.setMaxWidth(100);
 				account.accountTextView = (TextView)  convertView.findViewById( R.id.text_account_name );
 				account.linkBtn			= (Button)    convertView.findViewById( R.id.btn_linkaccount );
 				account.linkBtn.setMaxHeight(100);

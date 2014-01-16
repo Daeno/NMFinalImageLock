@@ -130,6 +130,13 @@ public class LoginWebviewActivity extends Activity {
 						triggerEnterKey();
 						alreadyLogin = true;
 					}
+					else if ( accountType.equals( getResources().getString(R.string.acctType_google) ) ) {
+						view.loadUrl( "javascript:document.getElementById('Email').value='" + un + "';"  
+								+ "document.getElementById('Passwd').value='" + pwd + "';" 
+								+ "document.getElementById('Passwd').focus();" 
+								+ "document.getElementById('gaia_loginform').submit();" );
+						alreadyLogin = true;
+					}
 					
 				}
 			});
@@ -161,6 +168,9 @@ public class LoginWebviewActivity extends Activity {
 		}
 		else if ( accountType.equals( res.getString(R.string.acctType_dropbox) ) ){
 			url = res.getString( R.string.url_dropbox );
+		}
+		else if ( accountType.equals( res.getString(R.string.acctType_google) ) ){
+			url = res.getString( R.string.url_google );
 		}
 		return url;
 	}

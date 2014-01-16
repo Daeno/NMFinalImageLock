@@ -256,40 +256,42 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
         public static final int icon_launcher=0x7f020001;
         public static final int logo_dropbox=0x7f020002;
-        public static final int logo_ntumail=0x7f020003;
-        public static final int menuitem_locked=0x7f020004;
-        public static final int menuitem_locked_touched=0x7f020005;
-        public static final int menuitem_settings=0x7f020006;
-        public static final int menuitem_settings_touched=0x7f020007;
-        public static final int menuitem_takephoto=0x7f020008;
-        public static final int menuitem_takephoto_touched=0x7f020009;
-        public static final int menuitem_unlocked=0x7f02000a;
-        public static final int menuitem_unlocked_touched=0x7f02000b;
-        public static final int shadow=0x7f02000c;
+        public static final int logo_google=0x7f020003;
+        public static final int logo_ntumail=0x7f020004;
+        public static final int mainmenutitle=0x7f020005;
+        public static final int menuitem_locked=0x7f020006;
+        public static final int menuitem_locked_touched=0x7f020007;
+        public static final int menuitem_settings=0x7f020008;
+        public static final int menuitem_settings_touched=0x7f020009;
+        public static final int menuitem_takephoto=0x7f02000a;
+        public static final int menuitem_takephoto_touched=0x7f02000b;
+        public static final int menuitem_unlocked=0x7f02000c;
+        public static final int menuitem_unlocked_touched=0x7f02000d;
+        public static final int shadow=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f040035;
+        public static final int action_settings=0x7f040037;
         public static final int alignBounds=0x7f040002;
         public static final int alignMargins=0x7f040003;
         public static final int any=0x7f040012;
         public static final int back=0x7f040013;
         public static final int bottom=0x7f040005;
-        public static final int btn_UnlockScreenTest=0x7f040025;
-        public static final int btn_cancel_linking=0x7f04002e;
-        public static final int btn_linkaccount=0x7f040034;
-        public static final int btn_loginaccount=0x7f040033;
-        public static final int btn_save_account=0x7f04002d;
-        public static final int btn_syncacct=0x7f040022;
+        public static final int btn_UnlockScreenTest=0x7f040026;
+        public static final int btn_cancel_linking=0x7f040030;
+        public static final int btn_linkaccount=0x7f040036;
+        public static final int btn_loginaccount=0x7f040035;
+        public static final int btn_save_account=0x7f04002f;
+        public static final int btn_syncacct=0x7f040023;
         public static final int center=0x7f04000c;
         public static final int center_horizontal=0x7f04000a;
         public static final int center_vertical=0x7f040008;
-        public static final int checkBox_setting=0x7f04002f;
+        public static final int checkBox_setting=0x7f040031;
         public static final int checkButton=0x7f04001b;
         public static final int clip_horizontal=0x7f04000f;
         public static final int clip_vertical=0x7f04000e;
-        public static final int edit_account=0x7f040028;
-        public static final int edit_confirmpassword=0x7f04002c;
-        public static final int edit_password=0x7f04002a;
+        public static final int edit_account=0x7f040029;
+        public static final int edit_confirmpassword=0x7f04002d;
+        public static final int edit_password=0x7f04002b;
         public static final int end=0x7f040011;
         public static final int fill=0x7f04000d;
         public static final int fill_horizontal=0x7f04000b;
@@ -297,29 +299,31 @@ containing a value of this type.
         public static final int front=0x7f040014;
         public static final int fullscreen_content_controls=0x7f040016;
         public static final int horizontal=0x7f040000;
-        public static final int img_account_icon=0x7f040031;
-        public static final int imgbtn_settings=0x7f04001f;
-        public static final int imgbtn_switchLock=0x7f04001d;
-        public static final int imgbtn_takePhoto=0x7f04001e;
+        public static final int img_account_icon=0x7f040033;
+        public static final int imgbtn_settings=0x7f040020;
+        public static final int imgbtn_switchLock=0x7f04001e;
+        public static final int imgbtn_takePhoto=0x7f04001f;
         public static final int left=0x7f040006;
-        public static final int listview_accounts=0x7f040024;
-        public static final int listview_settings=0x7f040023;
+        public static final int listview_accounts=0x7f040025;
+        public static final int listview_settings=0x7f040024;
+        public static final int mainmenu_title=0x7f04001d;
         public static final int mosaicButton=0x7f040018;
-        public static final int mosaicImage=0x7f040021;
-        public static final int progress=0x7f040026;
+        public static final int mosaicImage=0x7f040022;
+        public static final int progress=0x7f040027;
         public static final int right=0x7f040007;
         public static final int saveButton=0x7f04001a;
         public static final int shotButton=0x7f040019;
         public static final int start=0x7f040010;
-        public static final int textView_setting=0x7f040030;
-        public static final int text_account_name=0x7f040032;
+        public static final int tablelayout_savecancel=0x7f04002e;
+        public static final int textView_setting=0x7f040032;
+        public static final int text_account_name=0x7f040034;
         public static final int top=0x7f040004;
         public static final int trackButton=0x7f040017;
-        public static final int tutorial3_activity_java_surface_view=0x7f040020;
+        public static final int tutorial3_activity_java_surface_view=0x7f040021;
         public static final int tutorial3_activity_java_surface_view2=0x7f040015;
-        public static final int txt_account=0x7f040027;
-        public static final int txt_confirmpassword=0x7f04002b;
-        public static final int txt_password=0x7f040029;
+        public static final int txt_account=0x7f040028;
+        public static final int txt_confirmpassword=0x7f04002c;
+        public static final int txt_password=0x7f04002a;
         public static final int vertical=0x7f040001;
         public static final int webview=0x7f04001c;
     }
@@ -340,10 +344,11 @@ containing a value of this type.
         public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int accountInfo=0x7f07000f;
-        public static final int accountType=0x7f070010;
-        public static final int acctType_dropbox=0x7f07000e;
-        public static final int acctType_ntumail=0x7f07000d;
+        public static final int accountInfo=0x7f070011;
+        public static final int accountType=0x7f070012;
+        public static final int acctType_dropbox=0x7f07000f;
+        public static final int acctType_google=0x7f070010;
+        public static final int acctType_ntumail=0x7f07000e;
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int cancel=0x7f07000c;
@@ -353,21 +358,24 @@ containing a value of this type.
         public static final int input_password=0x7f070009;
         public static final int menu_set_image=0x7f070003;
         public static final int menu_settings=0x7f070004;
-        public static final int password=0x7f070012;
+        public static final int password=0x7f070014;
         public static final int save=0x7f07000b;
         public static final int setting_syncacct=0x7f070007;
         /**  settings activity 
          */
         public static final int setting_unlockScreenOn=0x7f070006;
-        public static final int title_activity_camera=0x7f070014;
-        public static final int title_activity_mosaic=0x7f070013;
-        public static final int toast_notsetaccount=0x7f070015;
+        public static final int title_activity_camera=0x7f070016;
+        public static final int title_activity_mosaic=0x7f070015;
+        public static final int toast_notsetaccount=0x7f070017;
         public static final int unlock=0x7f070005;
-        public static final int url_dropbox=0x7f070017;
-        public static final int url_ntuwebmail=0x7f070016;
-        public static final int username=0x7f070011;
+        public static final int url_dropbox=0x7f070019;
+        public static final int url_google=0x7f07001a;
+        public static final int url_ntuwebmail=0x7f070018;
+        public static final int username=0x7f070013;
+        public static final int warning_pwddiff=0x7f07000d;
     }
     public static final class style {
+        public static final int ActivityTitleText=0x7f080005;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
