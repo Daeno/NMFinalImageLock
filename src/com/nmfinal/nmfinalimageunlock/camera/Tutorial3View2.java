@@ -12,12 +12,12 @@ import android.hardware.Camera.Size;
 import android.util.AttributeSet;
 import android.util.Log;
 
-public class Tutorial3View extends JavaCameraView implements PictureCallback {
+public class Tutorial3View2 extends JavaCameraView implements PictureCallback {
 
     private static final String TAG = "Sample::Tutorial3View";
     private String mPictureFileName;
 
-    public Tutorial3View(Context context, AttributeSet attrs) {
+    public Tutorial3View2(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -69,8 +69,8 @@ public class Tutorial3View extends JavaCameraView implements PictureCallback {
     public void onPictureTaken(byte[] data, Camera camera) {
         Log.i(TAG, "Saving a bitmap to file");
         // The camera preview was automatically stopped. Start it again.
-        //mCamera.startPreview();
-        //mCamera.setPreviewCallback(this);
+        mCamera.startPreview();
+        mCamera.setPreviewCallback(this);
         // Write the image in a file (in jpeg format)
         try {
             FileOutputStream fos = new FileOutputStream(mPictureFileName);

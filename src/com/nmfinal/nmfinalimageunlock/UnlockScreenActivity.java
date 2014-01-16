@@ -56,6 +56,7 @@ public class UnlockScreenActivity extends Activity {
 	private String path;
 	private ProgressBar pp;
 	private int retry = 0;
+	private boolean isShowing;
 	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
 
 	       @Override
@@ -87,7 +88,11 @@ public class UnlockScreenActivity extends Activity {
 		
 		findViews();
 		addListeners();
-		
+		isShowing = (boolean) getIntent().getBooleanExtra("show_button",true);
+		if(!isShowing){
+			unlockButton.setVisibility(Button.INVISIBLE);
+			unlockButton.performClick();
+		}
 		IsRunningFlag ++;
 		activityStack.push( this );
 	}
@@ -137,11 +142,12 @@ public class UnlockScreenActivity extends Activity {
 				Log.i("fuck", "fuck");
 				pp.setVisibility(View.INVISIBLE);
 				retry++;
-				if(retry > 3){
+				if(retry >= 3){
 					Toast.makeText(UnlockScreenActivity.this, "You've tried too many times! Back Off!!!", Toast.LENGTH_SHORT).show();
 					setResult(RESULT_CANCELED);
 					finish();
 				}
+				if(!isShowing)unlockButton.performClick();
 			}
 			if(msg.what == -1){
 				Log.i("fuck","ya!!");
@@ -153,6 +159,10 @@ public class UnlockScreenActivity extends Activity {
     @Override
     public void onBackPressed() {
         // Don't allow back to dismiss.
+    	if(!isShowing){
+    		setResult(RESULT_CANCELED);
+    		finish();
+    	}
         return;
     }
     
@@ -281,7 +291,7 @@ public class UnlockScreenActivity extends Activity {
 
 	   	getGoodMatchesK( matches, descS.rows(), gmList );
 		goodMatches.fromList( gmList );
-		
+		if(gmList.size() < 12) return false;
 		
 		
 		ArrayList<Point> objectList = new ArrayList<Point>();

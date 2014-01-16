@@ -74,7 +74,9 @@ public class LoginWebviewActivity extends Activity {
 		//this is for testing, delete this if using picture lock
 		//startConnectingService();
 		Intent intent = new Intent(this,UnlockScreenActivity.class);
+		intent.putExtra("show_button", false);
 		startActivityForResult(intent,100);
+		
 		/*
 		fileUri = getOutputMediaUri( MEDIA_TYPE_IMAGE );
 		Intent pictureIntent = new Intent( MediaStore.ACTION_IMAGE_CAPTURE );
